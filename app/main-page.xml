@@ -1,0 +1,20 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+       <StackLayout class="p-20">
+		<ListView items="{{ beerList }}">
+			<ListView.itemTemplate>
+	  			<GridLayout id="2" rows="*,auto" columns="auto,*" tap="onListItemTapped" >
+                    <Image col="0" row="0" src="{{ img }}" />
+                    <StackLayout class="textContainer" class="textContainer" row="0" col="1">
+                        <Label class="head" text="{{ name }}" />
+                        <Label class="p" textWrap="true" text="{{ description }}" />
+                    </StackLayout>
+                     <Label class="abv" col="1" row="1" text="{{ 'Alcohol: ' + alcohol + '%' }}" />
+                </GridLayout>
+			</ListView.itemTemplate>
+		</ListView>
+    </StackLayout>
+</Page>
